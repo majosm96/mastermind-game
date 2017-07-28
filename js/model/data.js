@@ -14,6 +14,9 @@ var game_data = (function(){
     var factory = new FactoryPattern();
     var newPattern = factory.createPattern(type);
     var finalPattern = newPattern.create();
+    console.log(finalPattern);
+
+    return finalPattern;
   }
 
   /**
@@ -41,14 +44,33 @@ var game_data = (function(){
    * @param {array} observerPattern
    */
   var attempts = function(){
-    //
+    console.log('attemps');
+  }
+
+  /**
+   *Counts attempts
+   * @function
+   * @param
+   * Deberia estar en el view?
+   */
+  var changePegs = function(){
+    var messages = {
+      right: '../img/right-peg.png',
+      wrong: '../img/wrong-peg.png'
+    }
+
+    return console.log(messages);
   }
 
   return {
     machinePattern: machinePattern,
     userPattern: userPattern,
     matchPatterns: matchPatterns,
-    attempt: attempt
+    attempts: attempts,
+    changePegs: changePegs
   }
 
 })();
+
+game_data.machinePattern('beginner');
+game_data.changePegs();
